@@ -209,6 +209,18 @@ html {
 .concept-card--afterglow .concept-copy > span { color: #edb7a0; opacity: 1; }
 .concept-card--afterglow:hover .concept-art img { transform: rotate(9deg) scale(1.035); }
 
+.concept-card--folderverse { grid-column: 1 / -1; min-height: 27rem; background: #333cf5; border: 1px solid #a6aaff; border-radius: .6rem; }
+.concept-card--folderverse::after { background: linear-gradient(0deg,#202598,transparent 90%); }
+.concept-card--folderverse .concept-copy { max-width: 32rem; }
+.concept-card--folderverse .concept-copy h2 { color: #e9ff60; font-size: clamp(2.8rem,6vw,5rem); }
+.concept-card--folderverse .concept-copy > span { opacity: 1; color: #ffb2df; }
+.concept-card--folderverse .concept-copy p { min-height: 0; max-width: 29rem; }
+.bonus-folder-art { position: absolute; z-index: -1; inset: 0; pointer-events: none; overflow: hidden; }
+.bonus-folder-art i { position: absolute; display: block; width: clamp(8rem,19vw,19rem); aspect-ratio: 1.3; background: #ff93d1; border: 2px solid #252955; border-radius: .5rem; box-shadow: 0 1.5rem 2rem #11125144; transform: rotate(20deg); right: 6%; top: 23%; }
+.bonus-folder-art i::before { content: ""; position: absolute; bottom: 99%; left: -2px; width: 45%; height: 15%; background: inherit; border: 2px solid #252955; border-bottom: 0; border-radius: .4rem .7rem 0 0; }
+.bonus-folder-art i:nth-child(2) { right: 23%; top: 3%; transform: rotate(-14deg) scale(.65); background: #e9ff60; }
+.bonus-folder-art i:nth-child(3) { right: -4%; top: -3%; transform: rotate(35deg) scale(.5); background: #70eadb; }
+
 .concept-number {
   position: absolute;
   top: 1.5rem;

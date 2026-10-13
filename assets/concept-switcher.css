@@ -70,8 +70,8 @@
 }
 
 @media (max-width: 560px) {
-  .concept-switcher { gap: 0; }
-  .concept-switcher a { padding-inline: .45rem; font-size: .6rem; }
-  .concept-switcher .concept-home { flex: 0 0 2.2rem; font-size: 0; padding: 0; }
-  .concept-switcher .concept-home::before { margin: 0; font-size: 1rem; }
+  .concept-switcher { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 0; overflow: visible; border-radius: 1rem; }
+  .concept-switcher a, .concept-switcher .concept-home { min-width: 0; min-height: 2.75rem; padding-inline: .25rem; font-size: .6rem; }
+  .concept-switcher .concept-home::before { margin-right: .25rem; font-size: .8rem; }
+  .site-footer { padding-bottom: 9rem; }
 }

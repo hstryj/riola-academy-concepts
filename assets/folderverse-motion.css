@@ -1,0 +1,94 @@
+/* A fixed, clipped art layer. No animated element participates in page layout. */
+.theme-folderverse body { isolation: isolate; }
+.theme-folderverse .folderverse-sky {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  contain: strict;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.theme-folderverse .folderverse-sky * { pointer-events: none !important; }
+.theme-folderverse .folderverse-sprite {
+  --folder-front: var(--folderverse-acid, #eaff59);
+  --folder-back: color-mix(in srgb, var(--folder-front) 72%, #151323);
+  --folder-sheet: #fffdf4;
+  --folder-ink: #211b35;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: clamp(5.4rem, 10vw, 10.8rem);
+  aspect-ratio: 4 / 3;
+  margin: 0;
+  opacity: .72;
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+.theme-folderverse .folderverse-sprite:nth-child(4n + 2) { --folder-front: var(--folderverse-pink, #ff77bd); opacity: .65; }
+.theme-folderverse .folderverse-sprite:nth-child(4n + 3) { --folder-front: var(--folderverse-cyan, #70e9f2); opacity: .6; }
+.theme-folderverse .folderverse-sprite:nth-child(4n) { --folder-front: var(--folderverse-paper, #fff9e9); opacity: .5; }
+.theme-folderverse .folderverse-sprite[hidden] { display: none !important; }
+.theme-folderverse .folderverse-sprite > .folder-object {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: var(--folder-ink);
+  background: transparent;
+  transform: none;
+  animation: none !important;
+  filter: drop-shadow(0 .7rem .7rem #08051826);
+}
+.theme-folderverse .folderverse-sprite .folder-object::before,
+.theme-folderverse .folderverse-sprite .folder-object::after,
+.theme-folderverse .folderverse-sprite .folder-edition::before,
+.theme-folderverse .folderverse-sprite .folder-edition::after { content: none; }
+.theme-folderverse .folderverse-sprite .folder-shell { display: block; width: 100%; height: 100%; overflow: visible; }
+.theme-folderverse .folderverse-sprite .folder-back { fill: var(--folder-back); }
+.theme-folderverse .folderverse-sprite .folder-sheet { fill: var(--folder-sheet); }
+.theme-folderverse .folderverse-sprite .folder-front { fill: var(--folder-front); stroke: #211b3530; stroke-width: .8; }
+.theme-folderverse .folderverse-sprite .folder-seam { stroke: var(--folder-ink); stroke-opacity: .25; stroke-width: .65; }
+.theme-folderverse .folderverse-sprite .folder-glyph { position: absolute; left: 17%; top: 42%; width: 18%; height: 24%; }
+.theme-folderverse .folderverse-sprite .folder-edition {
+  position: absolute;
+  display: block;
+  right: 15%;
+  bottom: 20%;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  background: transparent;
+  font: 400 .5rem/1 ui-monospace, SFMono-Regular, Consolas, monospace;
+  letter-spacing: .08em;
+}
+.theme-folderverse .folderverse-sky[data-motion="paused"] .folderverse-sprite,
+.theme-folderverse .folderverse-sky[data-motion="reduced"] .folderverse-sprite,
+.theme-folderverse .folderverse-sky[data-motion="hidden"] .folderverse-sprite { will-change: auto; }
+.theme-folderverse #folderverse-motion-toggle[hidden],
+.theme-folderverse #folderverse-scatter[hidden] { display: none !important; }
+.theme-folderverse #folderverse-scatter:disabled { cursor: not-allowed; opacity: .45; }
+.theme-folderverse #folderverse-motion-status { min-inline-size: 8.5em; }
+
+@media (max-width: 760px) {
+  .theme-folderverse .folderverse-sprite { width: clamp(3.5rem, 15vw, 5.8rem); opacity: .5; }
+  .theme-folderverse .folderverse-sprite:nth-child(n + 7) { display: none !important; }
+  .theme-folderverse .folderverse-sprite .folder-edition { font-size: .35rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-folderverse .folderverse-sprite { opacity: .4; will-change: auto; }
+  .theme-folderverse .folderverse-sprite,
+  .theme-folderverse .folderverse-sprite * { animation: none !important; transition: none !important; }
+  .theme-folderverse #folderverse-motion-toggle,
+  .theme-folderverse #folderverse-scatter { display: none !important; }
+}

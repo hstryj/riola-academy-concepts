@@ -1,4 +1,4 @@
-# RIOLA Academy — four responsive design directions
+# RIOLA Academy — four responsive directions + one playful bonus
 
 Static GitHub Pages showcase containing four visual directions for the same
 workshop content:
@@ -7,6 +7,7 @@ workshop content:
 - `cinematic/` — a bolder, atmospheric studio direction;
 - `editorial/` — an experimental, fashion-forward direction;
 - `afterglow/` — warm sculptural imagery, editorial typography and paper-toned folders.
+- `folderverse/` — a deliberately playful bonus: decorative folders fly across the viewport while actual navigation remains stationary.
 
 The root page is a concept selector. All variants share the same accessible
 modals, optimized local assets and responsive behavior.
@@ -20,6 +21,10 @@ animation; desktop visitors can pause it, with the preference saved locally.
 
 The folder enhancement is isolated in `assets/floating-folders.css` and
 `assets/folder-motion.js`. Existing `data-page` modal contracts remain unchanged.
+
+Folderverse adds its own scoped theme and motion files. Its flight controls can
+pause or remix the decorative orbits. It respects reduced-motion preferences and
+keeps the four original directions available; it is a bonus, not their replacement.
 
 ## Important
 
