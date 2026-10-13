@@ -10,7 +10,9 @@
   <link rel="stylesheet" href="../assets/styles.css?v=20261012172255">
   <link rel="stylesheet" href="../assets/responsive-fixes.css?v=2">
   <link rel="stylesheet" href="../assets/workshop-maps.css?v=1">
+  <link rel="stylesheet" href="../assets/floating-folders.css?v=1">
   <link rel="stylesheet" href="../assets/concept-switcher.css?v=2">
+  <script src="../assets/folder-motion.js?v=1" defer></script>
   <script src="../assets/app.js?v=202610131830" defer></script>
   <link rel="preload" href="../assets/fonts/Signika_Negative/SignikaNegative-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="../assets/fonts/Waiting_for_the_Sunrise/WaitingfortheSunrise-Regular.ttf" as="font" type="font/ttf" crossorigin>
@@ -65,7 +67,7 @@
       <div class="availability"><span></span>Booking open</div>
     </section>
 
-    <section class="desktop-gallery" id="workshop-map" aria-label="Workshop pages">
+    <section class="desktop-gallery floating-workshop" id="workshop-map" aria-label="Workshop pages">
       <header class="workshop-stagebar">
         <span>RIOLA ACADEMY / LIVE BUILD</span>
         <div><i aria-hidden="true"></i> Online workshop</div>
@@ -78,24 +80,88 @@
           </div>
           <small>6 modules · live build</small>
         </header>
+        <div class="folder-toolbar">
+          <p>Open a folder. Find your next step.</p>
+          <button class="folder-motion-toggle" type="button" aria-pressed="false" hidden>Pause floating</button>
+        </div>
         <div class="folder-grid">
           <button class="folder folder--about" type="button" data-page="about" aria-label="Open About the Workshop">
-            <span class="module-index">01</span><span class="module-copy"><strong>About</strong><small>Workshop overview</small></span><span class="module-arrow" aria-hidden="true">↗</span>
+            <span class="folder-object" aria-hidden="true">
+              <svg class="folder-shell" viewBox="0 0 160 120" fill="none" focusable="false">
+                <path class="folder-back" d="M8 22a10 10 0 0 1 10-10h39l15 12h70a10 10 0 0 1 10 10v69a9 9 0 0 1-9 9H17a9 9 0 0 1-9-9Z"/>
+                <path class="folder-sheet" d="M21 28h115a5 5 0 0 1 5 5v66H21Z"/>
+                <path class="folder-front" d="M7 43a9 9 0 0 1 9-9h128a9 9 0 0 1 9 9l-5 60a9 9 0 0 1-9 9H21a9 9 0 0 1-9-9Z"/>
+                <path class="folder-seam" d="M18 40h124M24 101h112"/>
+              </svg>
+              <svg class="folder-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="8"/><path d="M12 11v6m0-10v1"/></svg>
+              <span class="folder-edition">01 / RIOLA</span>
+            </span>
+            <span class="module-copy"><strong>About</strong><small>Workshop overview</small></span><span class="module-arrow" aria-hidden="true">↗</span>
           </button>
           <button class="folder folder--price" type="button" data-page="price" aria-label="Open Price and Booking">
-            <span class="module-index">02</span><span class="module-copy"><strong>Price &amp; Booking</strong><small>Seats and checkout</small></span><span class="module-arrow" aria-hidden="true">↗</span>
+            <span class="folder-object" aria-hidden="true">
+              <svg class="folder-shell" viewBox="0 0 160 120" fill="none" focusable="false">
+                <path class="folder-back" d="M8 22a10 10 0 0 1 10-10h39l15 12h70a10 10 0 0 1 10 10v69a9 9 0 0 1-9 9H17a9 9 0 0 1-9-9Z"/>
+                <path class="folder-sheet" d="M21 28h115a5 5 0 0 1 5 5v66H21Z"/>
+                <path class="folder-front" d="M7 43a9 9 0 0 1 9-9h128a9 9 0 0 1 9 9l-5 60a9 9 0 0 1-9 9H21a9 9 0 0 1-9-9Z"/>
+                <path class="folder-seam" d="M18 40h124M24 101h112"/>
+              </svg>
+              <svg class="folder-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3" y="5" width="18" height="15" rx="3"/><path d="M7 3v4m10-4v4M3 10h18m-14 5h4"/></svg>
+              <span class="folder-edition">02 / RIOLA</span>
+            </span>
+            <span class="module-copy"><strong>Price &amp; Booking</strong><small>Seats and checkout</small></span><span class="module-arrow" aria-hidden="true">↗</span>
           </button>
           <button class="folder folder--before" type="button" data-page="before" aria-label="Open Before You Join">
-            <span class="module-index">03</span><span class="module-copy"><strong>Before you join</strong><small>Setup checklist</small></span><span class="module-arrow" aria-hidden="true">↗</span>
+            <span class="folder-object" aria-hidden="true">
+              <svg class="folder-shell" viewBox="0 0 160 120" fill="none" focusable="false">
+                <path class="folder-back" d="M8 22a10 10 0 0 1 10-10h39l15 12h70a10 10 0 0 1 10 10v69a9 9 0 0 1-9 9H17a9 9 0 0 1-9-9Z"/>
+                <path class="folder-sheet" d="M21 28h115a5 5 0 0 1 5 5v66H21Z"/>
+                <path class="folder-front" d="M7 43a9 9 0 0 1 9-9h128a9 9 0 0 1 9 9l-5 60a9 9 0 0 1-9 9H21a9 9 0 0 1-9-9Z"/>
+                <path class="folder-seam" d="M18 40h124M24 101h112"/>
+              </svg>
+              <svg class="folder-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="m3 6 2 2 4-4m3 2h9M3 13l2 2 4-4m3 2h9M3 20l2 2 4-4m3 2h9"/></svg>
+              <span class="folder-edition">03 / RIOLA</span>
+            </span>
+            <span class="module-copy"><strong>Before you join</strong><small>Setup checklist</small></span><span class="module-arrow" aria-hidden="true">↗</span>
           </button>
           <button class="folder folder--agenda" type="button" data-page="agenda" aria-label="Open Agenda">
-            <span class="module-index">04</span><span class="module-copy"><strong>Agenda</strong><small>Session timeline</small></span><span class="module-arrow" aria-hidden="true">↗</span>
+            <span class="folder-object" aria-hidden="true">
+              <svg class="folder-shell" viewBox="0 0 160 120" fill="none" focusable="false">
+                <path class="folder-back" d="M8 22a10 10 0 0 1 10-10h39l15 12h70a10 10 0 0 1 10 10v69a9 9 0 0 1-9 9H17a9 9 0 0 1-9-9Z"/>
+                <path class="folder-sheet" d="M21 28h115a5 5 0 0 1 5 5v66H21Z"/>
+                <path class="folder-front" d="M7 43a9 9 0 0 1 9-9h128a9 9 0 0 1 9 9l-5 60a9 9 0 0 1-9 9H21a9 9 0 0 1-9-9Z"/>
+                <path class="folder-seam" d="M18 40h124M24 101h112"/>
+              </svg>
+              <svg class="folder-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M6 3v18m0-15h14M6 12h10M6 18h14"/><circle cx="6" cy="6" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="6" cy="18" r="2"/></svg>
+              <span class="folder-edition">04 / RIOLA</span>
+            </span>
+            <span class="module-copy"><strong>Agenda</strong><small>Session timeline</small></span><span class="module-arrow" aria-hidden="true">↗</span>
           </button>
           <button class="folder folder--tutors" type="button" data-page="tutors" aria-label="Open Tutors">
-            <span class="module-index">05</span><span class="module-copy"><strong>Tutors</strong><small>Meet the mentors</small></span><span class="module-arrow" aria-hidden="true">↗</span>
+            <span class="folder-object" aria-hidden="true">
+              <svg class="folder-shell" viewBox="0 0 160 120" fill="none" focusable="false">
+                <path class="folder-back" d="M8 22a10 10 0 0 1 10-10h39l15 12h70a10 10 0 0 1 10 10v69a9 9 0 0 1-9 9H17a9 9 0 0 1-9-9Z"/>
+                <path class="folder-sheet" d="M21 28h115a5 5 0 0 1 5 5v66H21Z"/>
+                <path class="folder-front" d="M7 43a9 9 0 0 1 9-9h128a9 9 0 0 1 9 9l-5 60a9 9 0 0 1-9 9H21a9 9 0 0 1-9-9Z"/>
+                <path class="folder-seam" d="M18 40h124M24 101h112"/>
+              </svg>
+              <svg class="folder-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="9" cy="8" r="3"/><path d="M3 21v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 6"/></svg>
+              <span class="folder-edition">05 / RIOLA</span>
+            </span>
+            <span class="module-copy"><strong>Tutors</strong><small>Meet the mentors</small></span><span class="module-arrow" aria-hidden="true">↗</span>
           </button>
           <button class="folder folder--results" type="button" data-page="results" aria-label="Open Results">
-            <span class="module-index">06</span><span class="module-copy"><strong>Results</strong><small>What you will build</small></span><span class="module-arrow" aria-hidden="true">↗</span>
+            <span class="folder-object" aria-hidden="true">
+              <svg class="folder-shell" viewBox="0 0 160 120" fill="none" focusable="false">
+                <path class="folder-back" d="M8 22a10 10 0 0 1 10-10h39l15 12h70a10 10 0 0 1 10 10v69a9 9 0 0 1-9 9H17a9 9 0 0 1-9-9Z"/>
+                <path class="folder-sheet" d="M21 28h115a5 5 0 0 1 5 5v66H21Z"/>
+                <path class="folder-front" d="M7 43a9 9 0 0 1 9-9h128a9 9 0 0 1 9 9l-5 60a9 9 0 0 1-9 9H21a9 9 0 0 1-9-9Z"/>
+                <path class="folder-seam" d="M18 40h124M24 101h112"/>
+              </svg>
+              <svg class="folder-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="m12 2 3 7 7 3-7 3-3 7-3-7-7-3 7-3Z"/></svg>
+              <span class="folder-edition">06 / RIOLA</span>
+            </span>
+            <span class="module-copy"><strong>Results</strong><small>What you will build</small></span><span class="module-arrow" aria-hidden="true">↗</span>
           </button>
         </div>
       </div>

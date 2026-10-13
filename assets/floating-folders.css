@@ -1,0 +1,266 @@
+/* The folder metaphor, refined. Stable controls; only their artwork floats. */
+.floating-workshop {
+  --folder-ink: #fff6f0;
+  --folder-front: #9e4c66;
+  --folder-back: #733448;
+  --folder-sheet: #f3dfda;
+  --folder-shadow: #662d4330;
+  --folder-label: #33292d;
+  --folder-muted: #74636b;
+  --folder-hover: #80344c07;
+  scroll-margin-top: 4.5rem;
+}
+.floating-workshop .module-heading { margin-bottom: 0; }
+.floating-workshop .folder-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .3rem .8rem;
+  padding-block: .9rem .4rem;
+  color: var(--folder-muted);
+}
+.floating-workshop .folder-toolbar p { margin: 0; font: 400 .7rem/1.5 Ubuntu,sans-serif; }
+.floating-workshop .folder-motion-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: .45rem .6rem;
+  border: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+  border-radius: 2rem;
+  background: transparent;
+  color: inherit;
+  font: 400 .65rem/1.2 Ubuntu,sans-serif;
+  cursor: pointer;
+}
+.floating-workshop .folder-motion-toggle[hidden] { display: none; }
+.floating-workshop .folder-motion-toggle:hover { color: var(--folder-label); }
+.floating-workshop .folder-motion-toggle:focus-visible { outline: 2px solid var(--stage-accent); outline-offset: 3px; }
+.floating-workshop .module-nav .folder-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  grid-auto-rows: 1fr;
+  align-items: stretch;
+  gap: .9rem .45rem;
+  padding: 1rem 0 .5rem;
+  isolation: isolate;
+}
+.floating-workshop .module-nav .folder-grid::before { display: none; }
+.floating-workshop .module-nav .folder {
+  --folder-angle: -3deg;
+  --folder-lift: 0rem;
+  --folder-delay: -1s;
+  position: relative;
+  inset: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: .65rem;
+  min-height: 12.5rem;
+  padding: .75rem .25rem;
+  border: 1px solid transparent;
+  border-radius: .7rem;
+  background: transparent;
+  box-shadow: none;
+  text-align: center;
+  color: var(--folder-label);
+  transform: none;
+  translate: none;
+  transition: border-color .2s ease, background .2s ease;
+}
+.floating-workshop .module-nav .folder:nth-child(2n) {
+  --folder-angle: 3deg;
+  --folder-delay: -4s;
+  --folder-front: #508986;
+  --folder-back: #34625f;
+  --folder-shadow: #34625f30;
+}
+.floating-workshop .module-nav .folder:nth-child(3n) {
+  --folder-angle: -1deg;
+  --folder-delay: -7s;
+  --folder-front: #6886aa;
+  --folder-back: #48637f;
+  --folder-shadow: #48637f30;
+}
+.floating-workshop .module-nav .folder:nth-child(3n + 2) { --folder-lift: .65rem; }
+.floating-workshop .module-nav .folder:hover,
+.floating-workshop .module-nav .folder:focus-visible {
+  transform: none;
+  translate: none;
+  background: var(--folder-hover);
+  border-color: color-mix(in srgb, var(--stage-accent) 20%, transparent);
+  box-shadow: none;
+}
+.floating-workshop .module-nav .folder:focus-visible { outline: 2px solid var(--stage-accent); outline-offset: 2px; }
+/* Reset the original desktop icon labels, including nested span bubbles. */
+.floating-workshop .module-nav .folder span {
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+}
+.floating-workshop .module-nav .folder span::before,
+.floating-workshop .module-nav .folder span::after { content: none; display: none; }
+.floating-workshop .module-nav .folder > .folder-object {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  width: min(100%, 9.8rem);
+  aspect-ratio: 4/3;
+  margin: .3rem auto .45rem;
+  color: var(--folder-ink);
+  pointer-events: none;
+  transform: translateY(var(--folder-lift)) rotate(var(--folder-angle));
+  filter: drop-shadow(0 .8rem .55rem var(--folder-shadow));
+  transform-origin: 50% 70%;
+}
+.folder-object .folder-shell { display: block; width: 100%; height: 100%; overflow: visible; }
+.folder-object .folder-back { fill: var(--folder-back); }
+.folder-object .folder-sheet { fill: var(--folder-sheet); }
+.folder-object .folder-front { fill: var(--folder-front); stroke: #ffffff38; stroke-width: .8; }
+.folder-object .folder-seam { stroke: var(--folder-ink); stroke-opacity: .25; stroke-width: .65; }
+.folder-object .folder-glyph { position: absolute; left: 17%; top: 42%; width: 18%; height: 24%; }
+.floating-workshop .module-nav .folder .folder-edition {
+  position: absolute;
+  display: block;
+  right: 15%;
+  bottom: 20%;
+  font: 400 .5rem/1 ui-monospace,SFMono-Regular,Consolas,monospace;
+  letter-spacing: .08em;
+  color: inherit;
+}
+.floating-workshop .module-nav .folder .module-copy { width: 100%; gap: .3rem; text-align: center; }
+.floating-workshop .module-nav .folder .module-copy strong {
+  color: var(--folder-label);
+  font: 500 clamp(.82rem,1vw,.98rem)/1.35 Ubuntu,sans-serif;
+  letter-spacing: -.015em;
+}
+.floating-workshop .module-nav .folder .module-copy small {
+  color: var(--folder-muted);
+  font: 400 .66rem/1.45 Ubuntu,sans-serif;
+  letter-spacing: 0;
+}
+.floating-workshop .module-nav .folder > .module-arrow { display: none; }
+
+/* Cinematic: luminous archive objects, suspended on a constellation. */
+.theme-cinematic .floating-workshop {
+  --folder-label: #f4eee3;
+  --folder-muted: #b9acb1;
+  --folder-hover: #f4c56c08;
+  --folder-ink: #edc891;
+  --folder-sheet: #c79e63;
+}
+.theme-cinematic .floating-workshop .module-nav .folder {
+  --folder-front: #32262d;
+  --folder-back: #1b161e;
+  --folder-shadow: #f4c56c12;
+  --folder-lift: .2rem;
+}
+.theme-cinematic .floating-workshop .module-nav .folder:nth-child(2),
+.theme-cinematic .floating-workshop .module-nav .folder:nth-child(5) { --folder-lift: 1.1rem; }
+.theme-cinematic .folder-object .folder-front { stroke: #cc9d6399; stroke-width: 1; }
+.theme-cinematic .floating-workshop .module-nav .folder-grid::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  inset: 3rem 9% 5.5rem;
+  width: auto;
+  height: auto;
+  border: 1px dashed #d9ac7030;
+  border-radius: 50%;
+  background: transparent;
+  transform: rotate(-12deg);
+  pointer-events: none;
+}
+
+/* Editorial: oversized flat-cut folders, a compact two-column catalogue. */
+.theme-editorial .floating-workshop {
+  --folder-label: #17183e;
+  --folder-muted: #535572;
+  --folder-hover: #2246ff05;
+  --folder-ink: #f7f5ef;
+  --folder-sheet: #f8f6ed;
+}
+.theme-editorial .floating-workshop .module-nav .folder-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: .5rem 1.3rem; }
+.theme-editorial .floating-workshop .module-nav .folder {
+  --folder-front: #284fff;
+  --folder-back: #1634b8;
+  --folder-shadow: transparent;
+  --folder-angle: -2deg;
+  --folder-lift: 0rem;
+  min-height: 11.5rem;
+  border-bottom: 1px solid #242b5e30;
+  border-radius: 0;
+}
+.theme-editorial .floating-workshop .module-nav .folder:nth-child(3n + 2) { --folder-front: #d5f05e; --folder-back: #9bb333; --folder-ink: #233414; }
+.theme-editorial .floating-workshop .module-nav .folder:nth-child(3n) { --folder-front: #ef846c; --folder-back: #b95543; --folder-ink: #332528; }
+.theme-editorial .folder-object .folder-front { stroke: #18204c; stroke-width: 1.2; }
+.theme-editorial .floating-workshop .module-nav .folder .module-copy { text-align: left; }
+.theme-editorial .floating-workshop .module-nav .folder .module-copy strong { font-weight: 600; }
+.theme-editorial .floating-workshop .module-nav .folder > .folder-object { width: min(85%,10rem); margin-inline: 0 auto; }
+.theme-editorial .floating-workshop .folder-motion-toggle { border-radius: 0; }
+
+/* Afterglow: paper, copper, sage; the same folders in a softer material. */
+.theme-afterglow .floating-workshop {
+  --folder-label: #332728;
+  --folder-muted: #725f59;
+  --folder-hover: #704c3b07;
+  --folder-ink: #563a30;
+  --folder-sheet: #faf1e4;
+}
+.theme-afterglow .floating-workshop .module-nav .folder {
+  --folder-front: #d9b89d;
+  --folder-back: #ae866b;
+  --folder-shadow: #78534222;
+}
+.theme-afterglow .floating-workshop .module-nav .folder:nth-child(2n) { --folder-front: #c4c6af; --folder-back: #92967e; --folder-ink: #384838; }
+.theme-afterglow .floating-workshop .module-nav .folder:nth-child(3n) { --folder-front: #c9a5a1; --folder-back: #a47b77; --folder-ink: #4d3136; }
+.theme-afterglow .floating-workshop .module-nav .folder .module-copy strong { font-family: Georgia,serif; font-size: 1rem; font-weight: 400; }
+.theme-afterglow .folder-object .folder-front { stroke: #715d4435; }
+.theme-afterglow .floating-workshop .module-heading { flex-wrap: wrap; }
+
+@keyframes atelier-float {
+  0%,100% { transform: translateY(var(--folder-lift)) rotate(var(--folder-angle)); }
+  50% { transform: translateY(calc(var(--folder-lift) - .45rem)) rotate(calc(var(--folder-angle) + 1.2deg)); }
+}
+@media (min-width: 761px) and (prefers-reduced-motion: no-preference) {
+  .floating-workshop[data-motion] .module-nav .folder > .folder-object {
+    animation: atelier-float 9s ease-in-out var(--folder-delay) infinite;
+  }
+  .floating-workshop[data-motion="paused"] .module-nav .folder > .folder-object,
+  .floating-workshop .module-nav .folder:hover > .folder-object,
+  .floating-workshop .module-nav .folder:focus-visible > .folder-object { animation-play-state: paused; }
+}
+@media (max-width: 1100px) {
+  .floating-workshop.desktop-gallery {
+    grid-template-columns: minmax(0,1fr);
+    grid-template-areas: "stagebar" "modules" "preview" "stagefooter";
+  }
+  .floating-workshop .knit-preview { min-height: 20rem; max-height: 30rem; }
+  .theme-editorial .floating-workshop .module-nav .folder-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+}
+@media (max-width: 760px) {
+  .floating-workshop .module-nav .folder > .folder-object { transform: none; animation: none; }
+  .floating-workshop .folder-toolbar { padding-bottom: .6rem; }
+  .floating-workshop .module-nav .folder-grid { gap: .45rem; padding-top: .25rem; }
+  .floating-workshop .module-nav .folder { min-height: 11rem; padding: .65rem .25rem; }
+  .floating-workshop .module-nav .folder > .folder-object { width: min(100%,8.5rem); }
+  .floating-workshop .module-nav .folder .folder-edition { font-size: .45rem; }
+  .theme-cinematic .floating-workshop .module-nav .folder-grid::before { display: none; }
+}
+@media (max-width: 560px) {
+  .floating-workshop .module-nav .folder-grid,
+  .theme-editorial .floating-workshop .module-nav .folder-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .floating-workshop .module-nav .folder { min-height: 10rem; }
+  .floating-workshop .module-nav .folder .module-copy small { font-size: .64rem; }
+  .floating-workshop .module-nav { padding-inline: .7rem; }
+  .theme-afterglow .floating-workshop .module-nav { padding-inline: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .floating-workshop .module-nav .folder > .folder-object { animation: none !important; transform: none; }
+}

@@ -6,14 +6,20 @@ workshop content:
 - `refined/` — a polished version of the current RIOLA identity;
 - `cinematic/` — a bolder, atmospheric studio direction;
 - `editorial/` — an experimental, fashion-forward direction;
-- `afterglow/` — warm sculptural imagery, editorial typography and a connected learning path.
+- `afterglow/` — warm sculptural imagery, editorial typography and paper-toned folders.
 
 The root page is a concept selector. All variants share the same accessible
 modals, optimized local assets and responsive behavior.
 
-Workshop navigation also varies by direction: a clear numbered guide, a game-like
-mission map, a typographic chapter index, and an understated connected path.
-These are presentation differences, not different course difficulty levels.
+Workshop navigation retains the floating-folder identity in four treatments:
+muted dimensional folders, a luminous archive, a bold graphic catalogue and a
+warm paper atelier. These are presentation differences, not different course
+difficulty levels. Button hit areas and labels stay still while only decorative
+SVG artwork floats. Mobile layouts and reduced-motion preferences disable the
+animation; desktop visitors can pause it, with the preference saved locally.
+
+The folder enhancement is isolated in `assets/floating-folders.css` and
+`assets/folder-motion.js`. Existing `data-page` modal contracts remain unchanged.
 
 ## Important
 
