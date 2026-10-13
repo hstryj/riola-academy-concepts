@@ -8,9 +8,10 @@
   <title>Refined Original — RIOLA Academy concept</title>
   <link rel="icon" href="../assets/riola-mark-192.webp" type="image/webp">
   <link rel="stylesheet" href="../assets/styles.css?v=20261012172255">
-  <link rel="stylesheet" href="../assets/responsive-fixes.css?v=1">
-  <link rel="stylesheet" href="../assets/concept-switcher.css?v=1">
-  <script src="../assets/app.js?v=20261012172255" defer></script>
+  <link rel="stylesheet" href="../assets/responsive-fixes.css?v=2">
+  <link rel="stylesheet" href="../assets/workshop-maps.css?v=1">
+  <link rel="stylesheet" href="../assets/concept-switcher.css?v=2">
+  <script src="../assets/app.js?v=202610131830" defer></script>
   <link rel="preload" href="../assets/fonts/Signika_Negative/SignikaNegative-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="../assets/fonts/Waiting_for_the_Sunrise/WaitingfortheSunrise-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="../assets/fonts/Ubuntu/Ubuntu-Regular.ttf" as="font" type="font/ttf" crossorigin>
@@ -18,10 +19,11 @@
 </head>
 <body>
   <nav class="concept-switcher" aria-label="Design concepts">
-    <a class="concept-home" href="../">All directions</a>
+    <a class="concept-home" href="../" aria-label="All design directions">All directions</a>
     <a aria-current="page" href="../refined/">Refined</a>
     <a href="../cinematic/">Cinematic</a>
     <a href="../editorial/">Editorial</a>
+    <a href="../afterglow/">Afterglow</a>
   </nav>
   <main class="landing" id="landing">
     <div class="ambient ambient--blue" aria-hidden="true"></div>
@@ -63,7 +65,7 @@
       <div class="availability"><span></span>Booking open</div>
     </section>
 
-    <section class="desktop-gallery" aria-label="Workshop pages">
+    <section class="desktop-gallery" id="workshop-map" aria-label="Workshop pages">
       <header class="workshop-stagebar">
         <span>RIOLA ACADEMY / LIVE BUILD</span>
         <div><i aria-hidden="true"></i> Online workshop</div>
@@ -72,7 +74,7 @@
         <header class="module-heading">
           <div>
             <p><span aria-hidden="true"></span> Workshop map</p>
-            <h2>Choose a checkpoint</h2>
+            <h2>Your workshop, step by step</h2>
           </div>
           <small>6 modules · live build</small>
         </header>
@@ -122,7 +124,7 @@
     <section class="page-window" role="dialog" aria-modal="true" aria-labelledby="pageWindowTitle">
       <header class="window-bar">
         <span class="live-pill"><img data-src="../assets/radio.svg" alt="">LIVE</span>
-        <div class="window-identity"><small id="pageFolder">Folder 01</small><h2 id="pageWindowTitle">About the Workshop</h2></div>
+        <div class="window-identity"><small id="pageFolder">Chapter 01</small><h2 id="pageWindowTitle">About the Workshop</h2></div>
         <button class="close-button" type="button" data-close aria-label="Close page"></button>
       </header>
       <div class="page-body" id="pageBody"></div>
@@ -201,7 +203,7 @@
     <article class="content-page before-page">
       <div class="page-heading heading-with-pill"><div><p class="eyebrow eyebrow--blue">Setup checklist</p><h3>Before You Join</h3><p>Complete these steps before the workshop so the live sessions can stay focused on your outfit.</p></div><span class="soft-pill"><img src="../assets/clock.svg" alt="">Allow 30–45 minutes</span></div>
       <section class="preparation-grid">
-        <article class="checklist-card"><div class="checklist-title"><h4>Technical preparation</h4><span><b id="checkProgress">0</b> / 6 complete</span></div><ul class="checklist">
+        <article class="checklist-card"><div class="checklist-title"><h4>Technical preparation</h4><span><b id="checkProgress">0</b> / 7 complete</span></div><ul class="checklist">
           <li><label><input type="checkbox"><span class="check-dot"><img src="../assets/check.svg" alt=""></span><span><b>Install CLO</b><small>Download and install CLO before the first live session.</small></span><em>Required</em></label></li>
           <li><label><input type="checkbox"><span class="check-dot"><img src="../assets/check.svg" alt=""></span><span><b>Activate a license or trial</b><small>Confirm your CLO license or active trial opens correctly.</small></span><em>Required</em></label></li>
           <li><label><input type="checkbox"><span class="check-dot"><img src="../assets/check.svg" alt=""></span><span><b>Check if you joined the Discord channel after the payment</b><small>It will be sent to your email after the payment.</small></span><em>Required</em></label></li>

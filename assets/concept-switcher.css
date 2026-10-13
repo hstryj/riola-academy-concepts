@@ -19,7 +19,7 @@
 }
 
 .concept-switcher a {
-  min-height: 2rem;
+  min-height: 2.75rem;
   display: inline-flex;
   align-items: center;
   padding: 0 0.75rem;
@@ -50,7 +50,7 @@
   content: "←";
 }
 
-@media (max-width: 760px) {
+@media (max-width: 960px) {
   .concept-switcher {
     top: auto;
     right: 0.5rem;
@@ -65,4 +65,13 @@
     justify-content: center;
     padding-inline: 0.6rem;
   }
+
+  .site-footer { padding-bottom: 6rem; }
+}
+
+@media (max-width: 560px) {
+  .concept-switcher { gap: 0; }
+  .concept-switcher a { padding-inline: .45rem; font-size: .6rem; }
+  .concept-switcher .concept-home { flex: 0 0 2.2rem; font-size: 0; padding: 0; }
+  .concept-switcher .concept-home::before { margin: 0; font-size: 1rem; }
 }

@@ -96,12 +96,12 @@ window.onTurnstileLoad = () => window.dispatchEvent(new Event('turnstile-ready')
       const desktopGallery = document.querySelector('.desktop-gallery');
       const galleryVideo = document.querySelector('[data-lazy-video]');
       const pageMeta = {
-        about: { title: 'About the Workshop', folder: 'Folder 01' },
-        results: { title: 'Outcomes', folder: 'Folder 02' },
-        agenda: { title: 'Workshop Program', folder: 'Folder 03' },
-        tutors: { title: 'Instructors', folder: 'Folder 04' },
-        before: { title: 'Before You Join', folder: 'Folder 05' },
-        price: { title: 'Price & Booking', folder: 'Folder 06' }
+        about: { title: 'About the Workshop', folder: 'Chapter 01' },
+        results: { title: 'Outcomes', folder: 'Chapter 06' },
+        agenda: { title: 'Workshop Program', folder: 'Chapter 04' },
+        tutors: { title: 'Instructors', folder: 'Chapter 05' },
+        before: { title: 'Before You Join', folder: 'Chapter 03' },
+        price: { title: 'Price & Booking', folder: 'Chapter 02' }
       };
       const optimizedAssets = {
         'assets/red-flower.png': 'assets/red-flower-480.webp',
@@ -535,7 +535,7 @@ window.onTurnstileLoad = () => window.dispatchEvent(new Event('turnstile-ready')
 
       document.addEventListener('change', (event) => {
         if (!event.target.matches('.checklist input[type="checkbox"]')) return;
-        const checked = Math.min(6, document.querySelectorAll('.checklist input:checked').length);
+        const checked = document.querySelectorAll('.checklist input:checked').length;
         const progress = document.querySelector('#checkProgress');
         if (progress) progress.textContent = checked;
       });

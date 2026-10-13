@@ -114,7 +114,7 @@ html {
 
 .concept-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(0.8rem, 1.8vw, 1.5rem);
 }
 
@@ -201,6 +201,13 @@ html {
 .concept-card--editorial .concept-art img {
   filter: saturate(0.45) contrast(1.4);
 }
+
+.concept-card--afterglow { background: radial-gradient(ellipse at 70% 25%, #794d48, #19171d 75%); border-radius: 8rem .4rem .4rem .4rem; color: #f4eadb; }
+.concept-card--afterglow .concept-art img { object-fit: contain; width: 78%; height: 83%; margin-left: 23%; margin-top: -2%; transform: rotate(12deg); filter: sepia(.2) brightness(.85); }
+.concept-card--afterglow .concept-number { left: auto; right: 1.5rem; color: #edb7a0; }
+.concept-card--afterglow .concept-copy h2 { font-family: Georgia, serif; font-weight: 400; letter-spacing: -.045em; }
+.concept-card--afterglow .concept-copy > span { color: #edb7a0; opacity: 1; }
+.concept-card--afterglow:hover .concept-art img { transform: rotate(9deg) scale(1.035); }
 
 .concept-number {
   position: absolute;

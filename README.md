@@ -1,14 +1,19 @@
-# RIOLA Academy — three responsive design directions
+# RIOLA Academy — four responsive design directions
 
-Static GitHub Pages showcase containing three visual directions for the same
+Static GitHub Pages showcase containing four visual directions for the same
 workshop content:
 
 - `refined/` — a polished version of the current RIOLA identity;
 - `cinematic/` — a bolder, atmospheric studio direction;
-- `editorial/` — an experimental, fashion-forward direction.
+- `editorial/` — an experimental, fashion-forward direction;
+- `afterglow/` — warm sculptural imagery, editorial typography and a connected learning path.
 
 The root page is a concept selector. All variants share the same accessible
 modals, optimized local assets and responsive behavior.
+
+Workshop navigation also varies by direction: a clear numbered guide, a game-like
+mission map, a typographic chapter index, and an understated connected path.
+These are presentation differences, not different course difficulty levels.
 
 ## Important
 
