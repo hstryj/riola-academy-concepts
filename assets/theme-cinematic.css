@@ -1,0 +1,227 @@
+:root.theme-cinematic {
+  color-scheme: dark;
+  --cinema-ink: #09080b;
+  --cinema-paper: #f4eee3;
+  --cinema-gold: #f4c56c;
+  --cinema-wine: #a82a48;
+}
+
+.theme-cinematic body,
+.theme-cinematic .landing {
+  color: var(--cinema-paper);
+  background: var(--cinema-ink);
+}
+
+.theme-cinematic .landing {
+  background:
+    radial-gradient(circle at 76% 13%, rgba(154, 31, 62, 0.2), transparent 24rem),
+    linear-gradient(180deg, #0d0b10 0%, #09080b 72%, #060507 100%);
+}
+
+.theme-cinematic .ambient--blue {
+  background: radial-gradient(circle, rgba(116, 76, 198, 0.17), transparent 65%);
+}
+
+.theme-cinematic .ambient--warm {
+  background: radial-gradient(circle, rgba(244, 197, 108, 0.1), transparent 68%);
+}
+
+.theme-cinematic .brand-header {
+  height: 7rem;
+}
+
+.theme-cinematic .brand {
+  color: rgba(244, 238, 227, 0.62);
+  letter-spacing: 0.11em;
+}
+
+.theme-cinematic .brand img {
+  filter: grayscale(1) invert(1) brightness(1.5);
+}
+
+.theme-cinematic .hero {
+  width: min(82rem, calc(100% - (2 * var(--page-gutter))));
+  min-height: 38rem;
+  padding: clamp(2rem, 5vw, 5rem);
+  overflow: hidden;
+  grid-template-columns: minmax(23rem, 0.88fr) minmax(25rem, 1.12fr);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: clamp(2rem, 4vw, 3.25rem);
+  background:
+    linear-gradient(90deg, rgba(9, 8, 11, 0.98) 0%, rgba(9, 8, 11, 0.86) 42%, rgba(9, 8, 11, 0.1) 72%),
+    radial-gradient(circle at 76% 34%, rgba(168, 42, 72, 0.24), transparent 35%),
+    #0c0b0f;
+  box-shadow: 0 2.5rem 7rem rgba(0, 0, 0, 0.42);
+}
+
+.theme-cinematic .hero::after {
+  position: absolute;
+  inset: 1.1rem;
+  z-index: 3;
+  content: "";
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  border-radius: calc(clamp(2rem, 4vw, 3.25rem) - 0.6rem);
+}
+
+.theme-cinematic .hero-copy {
+  padding: 0;
+}
+
+.theme-cinematic .hero h1 {
+  margin-bottom: 2rem;
+  font-size: clamp(5rem, 9vw, 9.25rem);
+  line-height: 0.76;
+}
+
+.theme-cinematic .hero h1 > span {
+  color: var(--cinema-paper);
+  background: none;
+  -webkit-text-fill-color: var(--cinema-paper);
+}
+
+.theme-cinematic .hero h1 .accent {
+  color: var(--cinema-gold);
+  -webkit-text-fill-color: var(--cinema-gold);
+}
+
+.theme-cinematic .hero-subtitle {
+  color: var(--cinema-gold);
+}
+
+.theme-cinematic .hero-subtitle i {
+  background: var(--cinema-gold);
+}
+
+.theme-cinematic .hero-description {
+  max-width: 29rem;
+  color: rgba(244, 238, 227, 0.74);
+  font-size: 1rem;
+}
+
+.theme-cinematic .hero-note {
+  color: rgba(244, 238, 227, 0.5);
+}
+
+.theme-cinematic .primary-button {
+  border-color: rgba(244, 197, 108, 0.4);
+  color: #171117;
+  background: linear-gradient(120deg, #ffe19b, var(--cinema-gold));
+  box-shadow: 0 1rem 2.5rem rgba(244, 197, 108, 0.16);
+}
+
+.theme-cinematic .primary-button img {
+  filter: brightness(0);
+}
+
+.theme-cinematic .hero-art {
+  height: 100%;
+}
+
+.theme-cinematic .hero-flower {
+  inset: -5% -18% -8% -4%;
+  width: 122%;
+  height: 113%;
+  filter: contrast(1.04) saturate(0.82) brightness(0.82);
+}
+
+.theme-cinematic .workshop-pill {
+  color: var(--cinema-paper);
+  border-color: rgba(255, 255, 255, 0.13);
+  background: rgba(12, 10, 14, 0.72);
+}
+
+.theme-cinematic .facts {
+  margin-top: 1.25rem;
+  border-color: rgba(255, 255, 255, 0.11);
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: none;
+}
+
+.theme-cinematic .facts > div:not(.availability) {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-cinematic .facts span {
+  color: rgba(244, 238, 227, 0.45);
+}
+
+.theme-cinematic .facts strong {
+  color: var(--cinema-paper);
+}
+
+.theme-cinematic .facts .availability {
+  color: #ffe4ad;
+  background: rgba(244, 197, 108, 0.1);
+}
+
+.theme-cinematic .facts .availability span {
+  background: var(--cinema-gold);
+}
+
+.theme-cinematic .desktop-gallery {
+  --stage-accent: var(--cinema-gold);
+  margin-top: clamp(4rem, 8vw, 8rem);
+  box-shadow: 0 2.25rem 7rem rgba(0, 0, 0, 0.48);
+}
+
+.theme-cinematic .module-nav {
+  background:
+    radial-gradient(circle at 84% 4%, rgba(168, 42, 72, 0.2), transparent 32%),
+    rgba(255, 255, 255, 0.028);
+}
+
+.theme-cinematic .site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: #050406;
+}
+
+@media (max-width: 760px) {
+  .theme-cinematic .brand-header {
+    min-height: 5.5rem;
+    padding-inline: var(--page-gutter);
+  }
+
+  .theme-cinematic .hero {
+    width: min(calc(100% - (2 * var(--page-gutter))), 34rem);
+    min-height: 42rem;
+    display: block;
+    padding: 2rem 1.25rem;
+    border-radius: 1.75rem;
+  }
+
+  .theme-cinematic .hero h1 {
+    font-size: clamp(3.4rem, 18vw, 5.6rem);
+  }
+
+  .theme-cinematic .hero-art {
+    top: auto;
+    right: -3.5rem;
+    bottom: 0;
+    width: 112%;
+    height: 22rem;
+    opacity: 0.68;
+  }
+
+  .theme-cinematic .hero-flower {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-position: right bottom;
+  }
+
+  .theme-cinematic .hero-copy .workshop-pill--mobile {
+    margin: 1rem 0 0.75rem;
+  }
+
+  .theme-cinematic .hero-description,
+  .theme-cinematic .hero-note,
+  .theme-cinematic .hero-copy .primary-button {
+    position: relative;
+    z-index: 2;
+  }
+
+  .theme-cinematic .facts {
+    background: rgba(255, 255, 255, 0.055);
+  }
+}

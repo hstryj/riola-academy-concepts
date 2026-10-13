@@ -1,0 +1,68 @@
+.concept-switcher {
+  position: fixed;
+  z-index: 18;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  max-width: calc(100vw - 2rem);
+  padding: 0.32rem;
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(12, 11, 15, 0.82);
+  box-shadow: 0 0.75rem 2.5rem rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(18px);
+  font: 600 0.64rem/1 Ubuntu, sans-serif;
+}
+
+.concept-switcher a {
+  min-height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0.75rem;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.concept-switcher a:hover,
+.concept-switcher a:focus-visible {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.concept-switcher a:focus-visible {
+  outline: 2px solid #ffcf7d;
+  outline-offset: 2px;
+}
+
+.concept-switcher a[aria-current="page"] {
+  color: #151219;
+  background: #ffcf7d;
+}
+
+.concept-switcher .concept-home::before {
+  margin-right: 0.35rem;
+  content: "←";
+}
+
+@media (max-width: 760px) {
+  .concept-switcher {
+    top: auto;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    justify-content: flex-start;
+    max-width: none;
+  }
+
+  .concept-switcher a {
+    flex: 1 0 auto;
+    justify-content: center;
+    padding-inline: 0.6rem;
+  }
+}

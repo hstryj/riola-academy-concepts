@@ -1,0 +1,320 @@
+:root {
+  --showcase-ink: #111015;
+  --showcase-paper: #f7f2e9;
+  --showcase-gold: #ffcf7d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 0;
+  color-scheme: dark;
+  background: var(--showcase-ink);
+}
+
+.concepts-page {
+  min-width: 0;
+  margin: 0;
+  color: var(--showcase-paper);
+  background:
+    radial-gradient(circle at 90% 0%, rgba(122, 33, 56, 0.34), transparent 30rem),
+    radial-gradient(circle at 0% 86%, rgba(48, 70, 255, 0.16), transparent 33rem),
+    #111015;
+  font-family: Ubuntu, Arial, sans-serif;
+}
+
+.concepts-page main {
+  width: min(90rem, 100%);
+  min-height: 100dvh;
+  margin-inline: auto;
+  padding: clamp(1.25rem, 4vw, 3rem);
+}
+
+.concepts-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.concepts-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: rgba(247, 242, 233, 0.72);
+  text-decoration: none;
+  font-size: 0.72rem;
+  letter-spacing: 0.11em;
+}
+
+.concepts-brand img {
+  width: 2.8rem;
+  height: 2.8rem;
+  object-fit: contain;
+  filter: grayscale(1) invert(1) brightness(1.5);
+}
+
+.concepts-header > p {
+  margin: 0;
+  color: rgba(247, 242, 233, 0.42);
+  font-size: 0.66rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.concepts-intro {
+  max-width: 62rem;
+  margin-bottom: clamp(2.5rem, 6vw, 5rem);
+}
+
+.concepts-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1.25rem;
+  color: var(--showcase-gold);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.concepts-kicker span {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 0 0.28rem rgba(255, 207, 125, 0.1);
+}
+
+.concepts-intro h1 {
+  margin: 0;
+  color: #fff;
+  font: 600 clamp(3.4rem, 9vw, 8.6rem)/0.82 'Signika Negative', Ubuntu, sans-serif;
+  letter-spacing: -0.065em;
+}
+
+.concepts-intro h1 em {
+  color: transparent;
+  background: linear-gradient(90deg, #ffcf7d, #ff7d85 56%, #9e8cff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: normal;
+}
+
+.concepts-intro > p:last-child {
+  max-width: 42rem;
+  margin: 1.75rem 0 0;
+  color: rgba(247, 242, 233, 0.62);
+  font: 400 clamp(0.95rem, 1.5vw, 1.1rem)/1.55 Amarna, Ubuntu, sans-serif;
+}
+
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.8rem, 1.8vw, 1.5rem);
+}
+
+.concept-card {
+  position: relative;
+  isolation: isolate;
+  min-height: 34rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(1.1rem, 2vw, 1.6rem);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 2rem;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 1.7rem 4rem rgba(0, 0, 0, 0.2);
+  transition: transform 220ms ease, border-color 220ms ease;
+}
+
+.concept-card:hover {
+  z-index: 2;
+  border-color: rgba(255, 255, 255, 0.36);
+  transform: translateY(-0.45rem);
+}
+
+.concept-card:focus-visible {
+  outline: 3px solid var(--showcase-gold);
+  outline-offset: 4px;
+}
+
+.concept-card::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  background: linear-gradient(180deg, transparent 24%, rgba(8, 7, 10, 0.22) 52%, rgba(8, 7, 10, 0.98) 100%);
+}
+
+.concept-art {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+}
+
+.concept-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.concept-card:hover .concept-art img {
+  transform: scale(1.035);
+}
+
+.concept-card--refined {
+  color: #17151b;
+  background: #f7f2e9;
+}
+
+.concept-card--refined::after {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 22%, rgba(250, 247, 241, 0.45) 52%, rgba(250, 247, 241, 0.98) 100%);
+}
+
+.concept-card--refined .concept-art img {
+  object-position: 58% 10%;
+}
+
+.concept-card--cinematic .concept-art img {
+  filter: brightness(0.55) saturate(0.8) contrast(1.05);
+}
+
+.concept-card--editorial {
+  border: 2px solid #111015;
+  border-radius: 0;
+  box-shadow: 0.65rem 0.65rem 0 #ff5f58;
+}
+
+.concept-card--editorial::after {
+  background: linear-gradient(180deg, rgba(48, 70, 255, 0.14), rgba(48, 70, 255, 0.52) 46%, #3046ff 100%);
+}
+
+.concept-card--editorial .concept-art img {
+  filter: saturate(0.45) contrast(1.4);
+}
+
+.concept-number {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  display: grid;
+  width: 2.8rem;
+  height: 2.8rem;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font: 700 0.72rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.concept-copy > span {
+  display: block;
+  margin-bottom: 0.55rem;
+  opacity: 0.66;
+  font-size: 0.62rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.concept-copy h2 {
+  margin: 0;
+  font: 600 clamp(1.8rem, 3vw, 2.7rem)/0.98 'Signika Negative', Ubuntu, sans-serif;
+  letter-spacing: -0.04em;
+}
+
+.concept-copy p {
+  min-height: 4.6rem;
+  margin: 0.9rem 0 1.25rem;
+  opacity: 0.72;
+  font: 400 0.82rem/1.45 Amarna, Ubuntu, sans-serif;
+}
+
+.concept-card > strong {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid currentColor;
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.concept-card > strong span {
+  font-size: 1.15rem;
+}
+
+.concepts-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 3rem 0 1rem;
+  color: rgba(247, 242, 233, 0.42);
+  font-size: 0.7rem;
+}
+
+.concepts-footer p {
+  margin: 0;
+}
+
+@media (max-width: 960px) {
+  .concept-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .concept-card {
+    min-height: 28rem;
+  }
+
+  .concept-copy p {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .concepts-page main {
+    padding: 1rem;
+  }
+
+  .concepts-header {
+    align-items: flex-start;
+    padding-bottom: 3rem;
+  }
+
+  .concepts-header > p {
+    max-width: 9.5rem;
+    text-align: right;
+  }
+
+  .concepts-intro h1 {
+    font-size: clamp(3.2rem, 18vw, 5rem);
+  }
+
+  .concept-card {
+    min-height: 30rem;
+    border-radius: 1.4rem;
+  }
+
+  .concept-card--editorial {
+    border-radius: 0;
+  }
+
+  .concepts-footer {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .concept-card,
+  .concept-art img {
+    transition: none;
+  }
+}

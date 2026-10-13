@@ -1,0 +1,932 @@
+/*
+ * RIOLA responsive patch
+ *
+ * Loaded after styles.css so the original visual direction stays intact while
+ * fragile, fixed-width geometry becomes safe at narrow and intermediate sizes.
+ */
+
+:root {
+  --page-gutter: clamp(0.75rem, 4vw, 2rem);
+}
+
+html {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: clip;
+  scrollbar-gutter: auto;
+}
+
+body {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.landing {
+  width: 100%;
+  max-width: 100%;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
+.hero,
+.facts,
+.desktop-gallery,
+.content-page,
+.about-intro,
+.about-cards,
+.agenda-grid,
+.results-gallery,
+.tutor-grid,
+.preparation-grid,
+.price-layout,
+.page-window,
+.booking-window,
+.page-body {
+  min-width: 0;
+}
+
+.page-body,
+.content-page,
+.info-card,
+.agenda-card,
+.tutor-card,
+.checklist-card,
+.starter-card,
+.price-card,
+.inclusions-card,
+.terms-card {
+  overflow-wrap: anywhere;
+}
+
+.hero-fade-in,
+.hero-art.hero-fade-in,
+#hero-title.hero-fade-in,
+.hero-subtitle.hero-fade-in,
+.hero-description.hero-fade-in,
+.hero-note.hero-fade-in,
+.hero-copy .primary-button.hero-fade-in {
+  opacity: 1 !important;
+  animation: none !important;
+}
+
+.primary-button,
+.folder,
+.close-button,
+.submit-button,
+.site-footer a {
+  min-inline-size: 2.75rem;
+  min-block-size: 2.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (min-width: 491px) and (max-width: 960px) {
+  .facts {
+    width: min(calc(100% - (2 * var(--page-gutter))), 44rem) !important;
+    margin-inline: auto;
+  }
+
+  .facts .availability {
+    margin-left: 0 !important;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 760px) {
+  html,
+  body {
+    min-width: 0;
+  }
+
+  .brand-header {
+    width: 100%;
+    height: auto;
+    min-height: 5.5rem;
+    padding-inline: var(--page-gutter);
+  }
+
+  .brand {
+    font-size: clamp(0.75rem, 3.5vw, 0.95rem);
+  }
+
+  .brand img {
+    width: clamp(3.25rem, 16vw, 4.75rem);
+    height: auto;
+  }
+
+  .hero {
+    width: min(calc(100% - (2 * var(--page-gutter))), 34rem);
+    min-height: 0;
+    padding-bottom: clamp(1.5rem, 7vw, 2.25rem);
+  }
+
+  .hero-copy {
+    padding-inline: 0;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    margin-top: 0;
+    font-size: clamp(3.55rem, 20.5vw, 6rem);
+    line-height: 0.8;
+    letter-spacing: -0.12em;
+  }
+
+  .hero h1 > span {
+    max-width: 100%;
+    padding-right: 0.14em;
+  }
+
+  .hero-copy .workshop-pill--mobile {
+    margin: clamp(5.25rem, 27vw, 7rem) 0 0.75rem 0.5rem;
+  }
+
+  .hero-art {
+    top: clamp(3.5rem, 16vw, 5rem);
+    right: clamp(-5.25rem, -14vw, -3.5rem);
+    width: clamp(11.5rem, 57vw, 14.5rem);
+    height: clamp(10.5rem, 48vw, 13rem);
+  }
+
+  .hero-flower {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    transform: none;
+  }
+
+  .hero-subtitle {
+    margin-inline: 0.5rem 0;
+    font-size: clamp(0.95rem, 4.2vw, 1.15rem);
+  }
+
+  .hero-description {
+    max-width: 100%;
+    padding-inline: 0.5rem;
+    font-size: clamp(0.95rem, 4.25vw, 1.05rem);
+    line-height: 1.5;
+  }
+
+  .hero-note {
+    margin-inline: 0.5rem 0;
+    font-size: clamp(0.75rem, 3.4vw, 0.875rem);
+  }
+
+  .hero-copy .primary-button {
+    width: min(100%, 23rem);
+    min-height: 3.5rem;
+    margin-inline: auto;
+  }
+
+  .hero-copy .primary-button span {
+    font-size: clamp(0.95rem, 4.5vw, 1.125rem);
+  }
+
+  .facts {
+    width: min(calc(100% - (2 * var(--page-gutter))), 32rem);
+    min-height: 0;
+    margin-inline: auto;
+    padding: 1.25rem;
+  }
+
+  .facts > div:not(.availability),
+  .facts > div:first-child {
+    padding-block: 0.7rem;
+  }
+
+  .facts span {
+    font-size: 0.68rem;
+  }
+
+  .facts strong {
+    font-size: 0.95rem;
+  }
+
+  .desktop-gallery {
+    width: min(calc(100% - (2 * var(--page-gutter))), 34rem);
+    margin: 2rem auto 4rem;
+    gap: clamp(2.25rem, 10vw, 4rem);
+  }
+
+  .knit-preview {
+    width: min(100%, 25.5rem);
+  }
+
+  .folder-grid {
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    gap: clamp(1.2rem, 7vw, 2.25rem) 0.75rem;
+  }
+
+  .folder,
+  .folder--about,
+  .folder--price,
+  .folder--before,
+  .folder--agenda,
+  .folder--tutors,
+  .folder--results {
+    position: static;
+    width: min(8rem, 100%);
+    min-width: 0;
+    max-width: none;
+    justify-self: center;
+    font-size: clamp(0.875rem, 4vw, 1rem);
+  }
+
+  .folder img {
+    width: 100%;
+  }
+
+  .site-footer {
+    padding: 2rem var(--page-gutter) 2.5rem;
+    gap: 1.5rem;
+  }
+
+  .site-footer a {
+    display: inline-flex;
+    align-items: center;
+    min-inline-size: 0;
+    min-block-size: 2rem;
+    font-size: 0.75rem;
+  }
+
+  .modal-backdrop {
+    padding: 0.375rem;
+  }
+
+  .page-window,
+  .booking-window {
+    width: 100%;
+    min-height: 0;
+    max-height: calc(100dvh - 0.75rem);
+    border-radius: 1.5rem;
+  }
+
+  .window-bar {
+    flex-basis: 4.5rem;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 0.75rem;
+    padding-inline: 1rem;
+  }
+
+  .window-identity {
+    min-width: 0;
+  }
+
+  .window-identity h2 {
+    font-size: clamp(1rem, 5vw, 1.25rem);
+    overflow-wrap: anywhere;
+  }
+
+  .window-identity small {
+    font-size: 0.65rem;
+  }
+
+  .live-pill {
+    padding: 0.5rem 0.65rem;
+    font-size: 0.65rem;
+  }
+
+  .close-button {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .page-body {
+    width: 100%;
+    overflow-x: clip;
+  }
+
+  .content-page {
+    width: 100%;
+    padding: 1.25rem clamp(1rem, 5vw, 1.5rem) 1.75rem;
+  }
+
+  .about-intro {
+    display: flex;
+    height: auto;
+    min-height: 0;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .about-intro .rack-photo {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    overflow: hidden;
+    transform: none;
+  }
+
+  .about-intro .rack-photo > img {
+    position: static;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+
+  .about-cards,
+  .agenda-grid,
+  .tutor-grid,
+  .preparation-grid,
+  .price-layout {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-cards {
+    gap: 1rem;
+  }
+
+  .about-cards > .red-flower,
+  .red-flower--mobile {
+    right: -2.5rem;
+    left: auto;
+    max-width: 55vw;
+  }
+
+  .tutor-card,
+  .tutor-card:nth-child(2) {
+    grid-template-columns: minmax(6.75rem, 8.5rem) minmax(0, 1fr);
+  }
+
+  .booking-window {
+    overflow-x: clip;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .booking-bar,
+  .booking-form {
+    padding-inline: clamp(1rem, 6vw, 1.625rem);
+  }
+
+  .booking-form input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .sweater-rack {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 9rem;
+    margin-top: 1.25rem;
+    overflow: hidden;
+  }
+
+  .sweater-rack img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero h1 {
+    font-size: clamp(3.45rem, 19vw, 4.25rem);
+  }
+
+  .hero-copy .workshop-pill--mobile {
+    margin-top: 5.25rem;
+  }
+
+  .hero-art {
+    top: 3.5rem;
+    right: -4.75rem;
+    width: 11.5rem;
+    height: 10.75rem;
+  }
+
+  .facts {
+    padding-inline: 1rem;
+  }
+
+  .quick-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .tutor-card,
+  .tutor-card:nth-child(2) {
+    grid-template-columns: 1fr;
+  }
+
+  .tutor-card .portrait {
+    width: min(10rem, 100%);
+    height: auto;
+  }
+}
+
+/*
+ * Workshop map
+ * Replaces the desktop-folder metaphor with a compact workshop/game-editor UI.
+ * The containing "stage" borrows the strong hierarchy and framed depth of the
+ * owner's site without copying its layout, typography or cyber-security mood.
+ */
+.knit-background {
+  display: none;
+}
+
+.desktop-gallery {
+  --stage-ink: #110f14;
+  --stage-panel: #19161d;
+  --stage-paper: #fbf7f0;
+  --stage-muted: #aaa3ae;
+  --stage-accent: #ffcf7d;
+  width: min(80rem, calc(100% - (2 * var(--page-gutter))));
+  min-height: 22rem;
+  margin: clamp(3rem, 7vw, 6.25rem) auto clamp(3rem, 5vw, 4.5rem);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(0.75rem, 1.7vw, 1.25rem);
+  grid-template-columns: minmax(0, 1.18fr) minmax(18rem, 0.82fr);
+  grid-template-areas:
+    "stagebar stagebar"
+    "modules preview"
+    "stagefooter stagefooter";
+  align-items: stretch;
+  gap: clamp(0.75rem, 1.5vw, 1.1rem);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: clamp(1.75rem, 3vw, 2.6rem);
+  color: var(--stage-paper);
+  background:
+    radial-gradient(circle at 92% 0%, rgba(122, 33, 56, 0.42), transparent 31%),
+    radial-gradient(circle at 4% 108%, rgba(255, 207, 125, 0.11), transparent 33%),
+    linear-gradient(145deg, #1a161d, var(--stage-ink) 70%);
+  box-shadow: 0 1.75rem 5rem rgba(40, 28, 37, 0.22), inset 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.desktop-gallery::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  opacity: 0.22;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 2.5rem 2.5rem;
+  mask-image: linear-gradient(120deg, #000, transparent 76%);
+}
+
+.workshop-stagebar {
+  grid-area: stagebar;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.3rem 0.45rem 0.45rem;
+  color: var(--stage-muted);
+  font: 600 0.67rem/1.2 Ubuntu, sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.workshop-stagebar > span {
+  color: var(--stage-accent);
+}
+
+.workshop-stagebar > div {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.workshop-stagebar i {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: #ff6576;
+  box-shadow: 0 0 0 0.22rem rgba(255, 101, 118, 0.12), 0 0 0.9rem rgba(255, 101, 118, 0.48);
+}
+
+.module-nav {
+  grid-area: modules;
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  padding: clamp(1.25rem, 2.2vw, 2rem);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 1.65rem;
+  color: #f7f8fb;
+  background:
+    radial-gradient(circle at 86% 5%, rgba(217, 48, 74, 0.16), transparent 30%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.022));
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.035);
+}
+
+.module-nav::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  opacity: 0.26;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 2rem 2rem;
+  mask-image: linear-gradient(to bottom, #000, transparent 88%);
+}
+
+.module-heading {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.module-heading p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.45rem;
+  color: #aeb5c7;
+  font: 500 0.7rem/1.2 Ubuntu, sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.module-heading p span {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--stage-accent);
+  box-shadow: 0 0 0 0.25rem rgba(255, 207, 125, 0.1), 0 0 1rem rgba(255, 207, 125, 0.38);
+}
+
+.module-heading h2 {
+  margin: 0;
+  color: #fff;
+  font: 600 clamp(1.5rem, 2.2vw, 2.2rem)/1.05 'Signika Negative', Ubuntu, sans-serif;
+  letter-spacing: -0.035em;
+}
+
+.module-heading > small {
+  flex: 0 0 auto;
+  color: #8f97aa;
+  font: 500 0.72rem/1.2 Ubuntu, sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.module-nav .folder-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: auto;
+  gap: 0.75rem;
+}
+
+.module-nav .folder,
+.module-nav .folder--about,
+.module-nav .folder--price,
+.module-nav .folder--before,
+.module-nav .folder--agenda,
+.module-nav .folder--tutors,
+.module-nav .folder--results {
+  --module-accent: var(--stage-accent);
+  position: relative;
+  inset: auto;
+  grid-column: auto;
+  grid-row: auto;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  min-height: 5.4rem;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  justify-items: stretch;
+  gap: 0.75rem;
+  padding: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.095);
+  border-radius: 1rem;
+  color: #f7f8fb;
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.045);
+  font-family: Ubuntu, sans-serif;
+  text-align: left;
+  translate: none;
+  transform: none;
+  animation: none !important;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.module-nav .folder:hover {
+  border-color: color-mix(in srgb, var(--module-accent) 48%, transparent);
+  background: rgba(255, 207, 125, 0.085);
+  transform: translateY(-2px);
+}
+
+.module-nav .folder:focus-visible {
+  outline: 3px solid var(--module-accent);
+  outline-offset: 3px;
+}
+
+.module-nav .folder > span {
+  position: static;
+  z-index: auto;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.module-nav .folder > span::before {
+  display: none;
+  content: none;
+}
+
+.module-index {
+  display: grid;
+  width: 2.35rem;
+  height: 2.35rem;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--module-accent) 35%, transparent);
+  border-radius: 0.75rem;
+  color: var(--module-accent);
+  background: color-mix(in srgb, var(--module-accent) 10%, transparent);
+  font: 600 0.72rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.module-nav .folder .module-copy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+}
+
+.module-copy strong {
+  color: #f7f8fb;
+  font-size: clamp(0.82rem, 1.2vw, 0.98rem);
+  line-height: 1.15;
+}
+
+.module-copy small {
+  color: #969eb1;
+  font-size: 0.68rem;
+  line-height: 1.2;
+}
+
+.module-arrow {
+  justify-self: end;
+  color: var(--module-accent);
+  font: 400 1.05rem/1 Ubuntu, sans-serif;
+}
+
+.knit-preview {
+  grid-area: preview;
+  position: relative;
+  width: 100%;
+  min-height: 22rem;
+  align-self: stretch;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  aspect-ratio: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.65rem;
+  background: rgba(3, 3, 5, 0.7);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.035);
+}
+
+.knit-preview figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-width: 0;
+  padding: 1rem 1.2rem;
+  color: #fff;
+  font-family: Ubuntu, sans-serif;
+}
+
+.knit-preview figcaption span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #aeb5c7;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.knit-preview figcaption i {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #ff5b72;
+  box-shadow: 0 0 0 0.25rem rgba(255, 91, 114, 0.12);
+}
+
+.knit-preview figcaption strong {
+  min-width: 0;
+  overflow: hidden;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.knit-preview video {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  border-radius: 0 0 1.65rem 1.65rem;
+  clip-path: none;
+  object-fit: cover;
+}
+
+.workshop-stage-footer {
+  grid-area: stagefooter;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.35rem 0.45rem 0.2rem;
+  color: var(--stage-paper);
+  font-family: Ubuntu, sans-serif;
+}
+
+.workshop-stage-footer p {
+  min-width: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.workshop-stage-footer p > span {
+  color: var(--stage-muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.workshop-stage-footer strong {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.015em;
+}
+
+.workshop-stage-footer strong i {
+  margin-inline: 0.35rem;
+  color: var(--stage-accent);
+  font-style: normal;
+}
+
+.stage-progress {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--stage-muted);
+  font: 600 0.62rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.stage-progress i {
+  width: clamp(2.5rem, 6vw, 5.5rem);
+  height: 1px;
+  background: linear-gradient(90deg, var(--stage-accent) 16.667%, rgba(255, 255, 255, 0.17) 16.667%);
+}
+
+.stage-progress span:first-child {
+  color: var(--stage-accent);
+}
+
+@media (max-width: 760px) {
+  .desktop-gallery {
+    width: min(calc(100% - (2 * var(--page-gutter))), 34rem);
+    min-height: 0;
+    margin: 2.25rem auto 4rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "stagebar"
+      "modules"
+      "preview"
+      "stagefooter";
+    gap: 0.75rem;
+    padding: 0.65rem;
+    border-radius: 1.6rem;
+  }
+
+  .module-nav {
+    padding: 1.1rem;
+    border-radius: 1.2rem;
+  }
+
+  .module-heading {
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .module-heading > small {
+    max-width: 6.5rem;
+    text-align: right;
+  }
+
+  .module-nav .folder-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.625rem;
+  }
+
+  .module-nav .folder,
+  .module-nav .folder--about,
+  .module-nav .folder--price,
+  .module-nav .folder--before,
+  .module-nav .folder--agenda,
+  .module-nav .folder--tutors,
+  .module-nav .folder--results {
+    min-height: 4.5rem;
+    padding: 0.7rem;
+    font-size: 1rem;
+  }
+
+  .knit-preview {
+    order: initial;
+    min-height: clamp(17rem, 92vw, 26rem);
+    border-radius: 1.2rem;
+  }
+
+  .knit-preview video {
+    border-radius: 0 0 1.2rem 1.2rem;
+  }
+
+  .workshop-stagebar {
+    padding: 0.25rem 0.35rem 0.4rem;
+    font-size: 0.57rem;
+    letter-spacing: 0.09em;
+  }
+
+  .workshop-stage-footer {
+    align-items: flex-end;
+    padding: 0.35rem 0.35rem 0.2rem;
+  }
+
+  .workshop-stage-footer p {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .workshop-stage-footer strong {
+    font-size: 0.64rem;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1100px) {
+  .module-nav .folder-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .desktop-gallery {
+    grid-template-columns: minmax(0, 1.2fr) minmax(17rem, 0.8fr);
+  }
+}
+
+@media (min-width: 540px) and (max-width: 760px) {
+  .module-nav .folder-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
